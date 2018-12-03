@@ -1,0 +1,50 @@
+body{
+    position: relative;
+    padding: 1.5em;
+    margin: 0 0 50px;
+    font-family: 'Arimo', sans-serif;
+}
+
+#container{
+    width: 800px;
+    border: 1px solid blue;
+}
+
+#header{
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 1em 0 1em 0;
+    border-bottom: 1px solid blue;
+}
+
+#menu{
+    font-size: 12px;
+    background-color: blue;
+    padding: 3px 0px 3px 2px;
+}
+
+a.menu{
+    color: white;
+    padding-right: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#content {
+    display: inline-block;
+    border-left: 1px solid gray;
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
+
+.label {
+    text-align: right;
+    font-weight: bold;
+}
