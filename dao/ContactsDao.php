@@ -20,28 +20,23 @@ class ContactsDao
         return $result == 1;
     }
 
-    public function update(Contact $oldContact, Contact $newContact)
+    public function update(Contact $contact)
     {
         $sql = "update contacts set department = ?, first_name = ?, middle_initial = ?, last_name = ?, " .
             "primary_contact = ?, phone = ?, email = ?, title = ? " .
-            "where department = ?, first_name = ?, middle_initial = ?, last_name = ?, " .
-            "primary_contact = ?, phone = ?, email = ?, title = ?";
-        $params = array($newContact->getDepartment(), $newContact->getFirstName(), $newContact->getMiddleInitial(), $newContact->getLastName(),
-            $newContact->isPrimaryContact(), $newContact->getPhone(), $newContact->getEmail(), $newContact->getTitle(),
-            $oldContact->getDepartment(), $oldContact->getFirstName(), $oldContact->getMiddleInitial(), $oldContact->getLastName(),
-            $oldContact->isPrimaryContact(), $oldContact->getPhone(), $oldContact->getEmail(), $oldContact->getTitle());
+            "where id  ?";
+        $params = array($contact->getDepartment(), $contact->getFirstName(), $contact->getMiddleInitial(), $contact->getLastName(),
+            $contact->isPrimaryContact(), $contact->getPhone(), $contact->getEmail(), $contact->getTitle(), $contact->getId());
 
         $result = DB::query($sql, $params);
 
         return $result == 1;
     }
 
-    public function delete(Contact $contact)
+    public function delete(int $id)
     {
-        $sql = "delete from contacts where department = ?, first_name = ?, middle_initial = ?, last_name = ?, primary_contact = ?, " .
-            "phone = ?, email = ?, title = ?";
-        $params = array($contact->getDepartment(), $contact->getFirstName(), $contact->getMiddleInitial(), $contact->getLastName(),
-            $contact->isPrimaryContact(), $contact->getPhone(), $contact->getEmail(), $contact->getTitle());
+        $sql = "delete from contacts where id = ?";
+        $params = array($id);
 
         $result = DB::query($sql, $params);
 
@@ -64,6 +59,7 @@ class ContactsDao
 
     private function create($row)
     {
+        $id = $row["id"];
         $dept = $row["department"];
         $firstName = $row["first_name"];
         $middleInitial = $row["middle_initial"];
@@ -73,6 +69,6 @@ class ContactsDao
         $email = $row["email"];
         $title = $row["title"];
 
-        return new Contact($dept, $firstName, $middleInitial, $lastName, $primaryContact, $phone, $email, $title);
+        return new Contact($id, $dept, $firstName, $middleInitial, $lastName, $primaryContact, $phone, $email, $title);
     }
 }

@@ -8,15 +8,25 @@
 
 class Department
 {
+    private $id;
     private $deptNumber;
     private $code;
     private $name;
 
-    public function __construct(String $deptNumber, String $code, String $name)
+    public function __construct(int $id, String $deptNumber, String $code, String $name)
     {
+        $this->id = $id;
         $this->deptNumber = $deptNumber;
         $this->code = $code;
         $this->name = $name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     /**

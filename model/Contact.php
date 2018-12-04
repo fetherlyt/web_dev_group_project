@@ -8,6 +8,7 @@
 
 class Contact
 {
+    private $id;
     private $department;
     private $firstName;
     private $middleInitial;
@@ -17,8 +18,9 @@ class Contact
     private $email;
     private $title;
 
-    public function __construct(String $department, String $firstName, String $middleInitial, String $lastName, bool $primaryContact, String $phone, String $email, String $title)
+    public function __construct(int $id, String $department, String $firstName, String $middleInitial, String $lastName, bool $primaryContact, String $phone, String $email, String $title)
     {
+        $this->id = $id;
         $this->department = $department;
         $this->firstName = $firstName;
         $this->middleInitial = $middleInitial;
@@ -27,6 +29,14 @@ class Contact
         $this->phone = $phone;
         $this->email = $email;
         $this->title = $title;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     /**

@@ -1,7 +1,8 @@
 use dept_contacts;
 create table departments(
-  dept_number varchar(12),
+  id int not null auto_increment,
+  dept_number varchar(12) not null default "",
   code varchar(12) not null default "",
-  name varchar(64),
-  CONSTRAINT pk_reqd_field PRIMARY KEY (dept_number, name)
+  name varchar(64) not null default "",
+  CONSTRAINT pk_reqd_field PRIMARY KEY (id)
 );

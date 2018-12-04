@@ -1,13 +1,13 @@
 use dept_contacts;
 create table contacts(
-  department varchar(32),
-  first_name varchar(32),
+  id int not null auto_increment,
+  department varchar(32) not null default "",
+  first_name varchar(32) not null default "",
   middle_initial char not null default "",
-  last_name varchar(32),
+  last_name varchar(32) not null default "",
   primary_contact bool not null default 0,
-  phone varchar(12),
-  email varchar(64),
+  phone varchar(12) not null default "",
+  email varchar(64) not null default "",
   title varchar(32) not null default "",
-  CONSTRAINT pk_full_row PRIMARY KEY (department, first_name,
-  last_name, phone, email)
+  CONSTRAINT pk_contact_id PRIMARY KEY (id)
 );

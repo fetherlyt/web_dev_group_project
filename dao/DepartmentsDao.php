@@ -19,12 +19,11 @@ class departmentsDao
         return $result == 1;
     }
 
-    public function update(Department $oldDept, Department $newDept)
+    public function update(Department $dept)
     {
         $sql = "update departments set dept_number = ?, code = ?, name = ? " .
-            "where dept_number = ?, code = ?, name = ?";
-        $params = array($newDept->getDeptNumber(), $newDept->getCode(), $newDept->getName(),
-            $oldDept->getDeptNumber(), $oldDept->getCode(), $oldDept->getName());
+            "where id = ?";
+        $params = array($dept->getDeptNumber(), $dept->getCode(), $dept->getName(), $dept->getId());
 
         $result = DB::query($sql, $params);
 
@@ -47,10 +46,11 @@ class departmentsDao
 
     private function create($row)
     {
+        $id = $row["id"];
         $deptNum = $row["dept_number"];
         $code = $row["code"];
         $name = $row["name"];
 
-        return new Department($deptNum, $code, $name);
+        return new Department($id, $deptNum, $code, $name);
     }
 }
