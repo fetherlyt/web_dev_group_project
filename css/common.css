@@ -8,6 +8,7 @@ body{
 #container{
     width: 800px;
     border: 1px solid blue;
+    min-height: 800px;
 }
 
 #header{
@@ -16,7 +17,18 @@ body{
     font-weight: bold;
     background-color: lightgray;
     padding: 1em 0 1em 0;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid black;
+}
+
+#homeline{
+    width: 100%;
+    font-size: 12px;
+    background-color: gray;
+    border-bottom: 1px solid black;
+}
+
+.pageLabel{
+    color: blue;
 }
 
 #menu{
