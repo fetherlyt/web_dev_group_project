@@ -31,7 +31,7 @@ function displayContactEntryForm() {
     tr.append(td);
 
 
-    //addint department row: label and department
+    //adding department row: label and department
     //need to alter line ~40 to pull the department name from DB
     td = createNode("td", []);
     tr.append(td);
@@ -48,7 +48,7 @@ function displayContactEntryForm() {
     tr.append(td);
 
 
-    //adding in the first name row: label and input box
+    //adding in the first name row: label and input box *required*
     td = createNode("td", []);
     tr.append(td);
     var firstNameTxt = createNode("input",
