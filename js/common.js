@@ -5,3 +5,11 @@ $(function() {
     });
 
 });
+
+function createNode(element, attrs) {
+    var node = document.createElement(element);
+    attrs.forEach(function(attr) {
+        node.setAttribute(attr.name, attr.value);
+    });
+    return node;
+}
