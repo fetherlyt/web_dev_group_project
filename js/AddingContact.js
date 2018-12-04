@@ -30,6 +30,9 @@ function displayContactEntryForm() {
     td.innerHTML = "Department: ";
     tr.append(td);
 
+
+    //addint department row: label and department
+    //need to alter line ~40 to pull the department name from DB
     td = createNode("td", []);
     tr.append(td);
     var departmentName = createNode("span", []);
@@ -44,6 +47,8 @@ function displayContactEntryForm() {
     td.innerHTML = "First Name: ";
     tr.append(td);
 
+
+    //adding in the first name row: label and input box
     td = createNode("td", []);
     tr.append(td);
     var firstNameTxt = createNode("input",
@@ -56,6 +61,8 @@ function displayContactEntryForm() {
         [{"name":"class","value":"error"}]);
     fdRequired.innerHTML = "*";
     td.append(fdRequired);
+
+
 
     //Middle Initial
     //Last name *required*
