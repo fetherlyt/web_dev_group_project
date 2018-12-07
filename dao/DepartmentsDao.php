@@ -44,6 +44,15 @@ class departmentsDao
         return $result;
     }
 
+    public function get(int $id)
+    {
+        $sql = "select * from departments where id = ?";
+        $params = array($id);
+        $row = DB::queryAll($sql, $params);
+
+        return create($row);
+    }
+
     private function create($row)
     {
         $id = $row["id"];
