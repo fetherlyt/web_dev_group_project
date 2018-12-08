@@ -6,7 +6,7 @@
  * Time: 5:50 PM
  */
 
-class departmentsDao
+class DepartmentsDao
 {
     public function insert(Department $dept)
     {

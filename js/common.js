@@ -4,6 +4,11 @@ $(function() {
         handleContactAdd(event);
     });
 
+    /* By Yanjun --#addDeptId*/
+    $("#addDeptId").click(function (event) {
+        addDepartmentView(event);
+    });
+
 });
 
 function createNode(element, attrs) {

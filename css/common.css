@@ -48,3 +48,20 @@ h3{
 #signbtn{
     padding-left: 20px;
  }
+
+/* yanjun: td.label; #subContent; .error*/
+td.label {
+    text-align: right;
+    font-weight: bold;
+    padding: 8px;
+}
+
+#subContent{
+    padding-left: 50px;
+}
+
+.error{
+    color:red;
+}
+
+
