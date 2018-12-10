@@ -67,7 +67,7 @@ class DepartmentController extends AbstractBaseController
         } else {
             $this->data["statusCode"] = 200;
             $this->data["statusMsg"] = "Success";
-            $this->data["sprocket"] = $result;
+            $this->data["department"] = $result;
         }
     }
 
@@ -80,7 +80,7 @@ class DepartmentController extends AbstractBaseController
         }
 
         $json = json_decode($body, true);
-        $deptNumber = $json["deptNumber"];
+        $deptNumber = $json["departmentNumber"];
         $code = $json["code"];
         $name = $json["name"];
 
@@ -93,7 +93,7 @@ class DepartmentController extends AbstractBaseController
             if ($result) {
                 $this->data["statusCode"] = 201;
                 $this->data["statusMsg"] = "Created";
-                $this->data["contact"] = $department;
+                $this->data["department"] = $department;
             }
         } catch (Exception $e) {
             $time = time();
@@ -111,7 +111,7 @@ class DepartmentController extends AbstractBaseController
 
         $json = json_decode($body, true);
         $id = $json["id"];
-        $deptNumber = $json["deptNumber"];
+        $deptNumber = $json["departmentNumber"];
         $code = $json["code"];
         $name = $json["name"];
 
@@ -124,7 +124,7 @@ class DepartmentController extends AbstractBaseController
             if ($result) {
                 $this->data["statusCode"] = 201;
                 $this->data["statusMsg"] = "Updated";
-                $this->data["contact"] = $department;
+                $this->data["department"] = $department;
             }
         } catch (Exception $e) {
             $time = time();
