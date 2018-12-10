@@ -1,9 +1,5 @@
-function handleContactAdd(event){
-    event.preventDefault();
-    displayContactEntryForm();
-}
+function handleContactAdd(departmentid, departmentname){
 
-function displayContactEntryForm() {
     var content = $("#content");
     content.empty();
 
@@ -34,15 +30,11 @@ function displayContactEntryForm() {
     tr.append(td);
 
 
-    //adding department row: label and department
-    ///////////////////////////////
-    //need to alter line ~43 to pull the department name from DB
-    ///////////////////////////////
+
     td = createNode("td", []);
     tr.append(td);
     var departmentName = createNode("span", []);
-    //add in the portion that calls the department name
-    departmentName.innerHTML = "";
+    departmentName.innerHTML = departmentname;
     td.append(departmentName);
 
     tr = createNode("tr", []);
@@ -219,7 +211,7 @@ function displayContactEntryForm() {
     saveContactBtn.addEventListener("click", function (event) {
         event.preventDefault();
         if (validateContactForm())
-            handleSubmitContactForm();
+            handleSubmitForm(departmentid);
     });
 
     cancelContactBtn.addEventListener("click", function (event) {
@@ -266,8 +258,9 @@ function cancelContactForm() {
     document.location = "index.html";
 }
 
-function handleSubmitForm() {
+function handleSubmitForm(departmentid) {
     var body = Object();
+    body[$("#department").attr("name")] = departmentid;
     body[$("#firstName").attr("name")] = $("#firstName").val();
     body[$("#midName").attr("name")] = $("#midName").val();
     body[$("#lastName").attr("name")] = $("#lastName").val();
