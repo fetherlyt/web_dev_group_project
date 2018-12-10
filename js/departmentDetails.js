@@ -210,12 +210,14 @@ function processContactsTable(response) {
         tr.append(td);
 
         td = createNode("td", [{"name": "class", "value": "listing"}]);
-        button1 =createNode("button",[{"name": "style", "value": "padding:3px"}]);
+        button1 =createNode("button",[{"name": "style", "value": "padding:3px"},
+            ]);
 
 
         lnk1 = createNode("a",
             [{"name":"id","value":"c-" + contact.id},
                 {"name":"href","value":"Contact/" + contact.id},
+                {"name": "class", "value": "button"}
             ]);
 
         button1.append(lnk1);
@@ -227,12 +229,15 @@ function processContactsTable(response) {
         });
 
 
-        button2 =createNode("button",[{"name": "style", "value": "padding:3px"}]);
+        button2 =createNode("button",[{"name": "style", "value": "padding:3px"},
+
+        ]);
 
 
         lnk2 = createNode("a",
             [{"name":"id","value":"del-" + contact.id},
                 {"name":"href","value":"delete/" + contact.id},
+                {"name": "class", "value": "button"}
             ]);
         button2.append(lnk2);
         lnk2.innerHTML = "Delete";
