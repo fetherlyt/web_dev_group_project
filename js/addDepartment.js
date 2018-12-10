@@ -1,3 +1,4 @@
+
 /*Create by Yanjun */
 
 function addDepartmentView(event) {
