@@ -96,6 +96,11 @@ function processDepartmentDetailView(response) {
     addButton.innerHTML = "+";
     viewContainer.append(addButton);
 
+    addButton.addEventListener("click",function (event) {
+        event.preventDefault();
+        handleContactAdd(department.id,department.name);
+    });
+
     //create div to show contacts information
     var ContactsContainer = createNode("div",
         [{"name": "id", "value": "contactContent"}]);
