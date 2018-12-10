@@ -1,4 +1,5 @@
-/*Create by Yanjun 12/3*/
+
+/*Create by Yanjun */
 
 function addDepartmentView(event) {
     event.preventDefault();

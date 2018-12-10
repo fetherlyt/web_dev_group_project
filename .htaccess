@@ -1,0 +1,21 @@
+# .htaccess file for configuring Apache
+
+## Disable indexing directory contents so that files won't be listed if a
+## user types in a directory path in his browser
+Options -Indexes
+
+RewriteEngine On
+## Uncomment this for some production servers to work. Not needed for local dev.
+# RewriteBase /
+
+## Front controller
+## Turn the rewrite engine on and add a rewrite rule, where we tell it that we want
+## to redirect everything except certain extensions to index.php
+## No redirection is made when a file or folder exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule !\.(pdf|js|ico|gif|jpg|png|css|rar|zip|tar\.gz)$ index.php [L]
+
+## process the .phtml extension in a way that makes it impossible for anyone
+## to view our templates' source code
+AddType application/x-httpd-php .php .phtml

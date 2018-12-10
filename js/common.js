@@ -4,6 +4,19 @@ $(function() {
         handleContactAdd(event);
     });
 
+    /* By Yanjun --#addDeptId, deptDetailId, editDeptId*/
+    $("#addDeptId").click(function (event) {
+        addDepartmentView(event);
+    });
+
+    $("#deptDetailId").click(function (event) {
+        handleDepartmentDetails(event);
+    });
+
+    $("#editDeptId").click(function (event) {
+        handleOneDepartment(event);
+    });
+
 });
 
 function createNode(element, attrs) {
