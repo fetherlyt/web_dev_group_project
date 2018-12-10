@@ -6,7 +6,9 @@
  * Time: 5:32 PM
  */
 
-class Department
+
+/*yanjun: implements JsonSerializable */
+class Department implements JsonSerializable
 {
     private $id;
     private $deptNumber;
@@ -62,6 +64,6 @@ class Department
      */
     public function jsonSerialize()
     {
-        return ["deptNumber" => $this->deptNumber, "code" => $this->code, "name" => $this->name];
+        return ["id"=>$this->id, "deptNumber" => $this->deptNumber, "code" => $this->code, "name" => $this->name,];
     }
 }

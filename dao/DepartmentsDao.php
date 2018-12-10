@@ -6,7 +6,7 @@
  * Time: 5:50 PM
  */
 
-class departmentsDao
+class DepartmentsDao
 {
     public function insert(Department $dept)
     {
@@ -22,7 +22,7 @@ class departmentsDao
     public function update(Department $dept)
     {
         $sql = "update departments set dept_number = ?, code = ?, name = ? " .
-            "where id = ?";
+            "where `id` = ?";
         $params = array($dept->getDeptNumber(), $dept->getCode(), $dept->getName(), $dept->getId());
 
         $result = DB::query($sql, $params);
@@ -46,11 +46,11 @@ class departmentsDao
 
     public function get(int $id)
     {
-        $sql = "select * from departments where id = ?";
+        $sql = "select * from departments where `id` = ?";
         $params = array($id);
-        $row = DB::queryAll($sql, $params);
+        $row = DB::queryOne($sql, $params);
 
-        return create($row);
+        return $this->create($row);
     }
 
     private function create($row)

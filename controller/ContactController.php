@@ -53,7 +53,7 @@ class ContactController extends AbstractBaseController
             $this->data["statusMsg"] = "Success";
         }
 
-        $this->data["departments"] = $result;
+        $this->data["contacts"] = $result;
     }
 
     private function get($param)
@@ -67,7 +67,7 @@ class ContactController extends AbstractBaseController
         } else {
             $this->data["statusCode"] = 200;
             $this->data["statusMsg"] = "Success";
-            $this->data["sprocket"] = $result;
+            $this->data["contact"] = $result;
         }
     }
 
@@ -139,4 +139,5 @@ class ContactController extends AbstractBaseController
             $this->data["code"] = $time;
         }
     }
+
 }
