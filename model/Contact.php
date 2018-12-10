@@ -6,7 +6,7 @@
  * Time: 5:32 PM
  */
 
-class Contact
+class Contact implements JsonSerializable
 {
     private $id;
     private $department;
@@ -18,7 +18,7 @@ class Contact
     private $email;
     private $title;
 
-    public function __construct(int $id, String $department, String $firstName, String $middleInitial, String $lastName, bool $primaryContact, String $phone, String $email, String $title)
+    public function __construct(int $id, int $department, String $firstName, String $middleInitial, String $lastName, bool $primaryContact, String $phone, String $email, String $title)
     {
         $this->id = $id;
         $this->department = $department;
@@ -40,9 +40,9 @@ class Contact
     }
 
     /**
-     * @return String
+     * @return int
      */
-    public function getDepartment(): String
+    public function getDepartment(): int
     {
         return $this->department;
     }
@@ -112,7 +112,7 @@ class Contact
      */
     public function jsonSerialize()
     {
-        return ["department" => $this->department, "firstName" => $this->firstName, "middleInitial" => $this->middleInitial,
+        return ["id" => $this->id,"department" => $this->department, "firstName" => $this->firstName, "middleInitial" => $this->middleInitial,
             "lastName" => $this->lastName, "primaryContact" => $this->primaryContact, "phone" => $this->phone,
             "email" => $this->email, "title" => $this->title];
     }

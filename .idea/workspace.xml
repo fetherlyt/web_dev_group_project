@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62498793-5efe-4f88-80c3-f63bfb56cdb0" name="Default Changelist" comment=" 1.edit the index file. add &lt;script&gt;in the &lt;head&gt;. &#10; 2. edit common.css. &#10; 3. edit.common.js &#10; 4. addDepartment.js &#10; 5.addDepartmentsController and the other controllers &#10; 6. edit Department.php &#10; 7.move all the files in &quot;dao&quot; folder into &quot;model&quot;folder&#10; &#10; based on the &quot;version 6&quot;">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6a7172a3-0767-4cf2-b389-2e2de2dd7129.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/app-config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/creds.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/AbstractBaseController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/RouterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/StatusController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/addDepartmentsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/addDepartment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Util.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="62498793-5efe-4f88-80c3-f63bfb56cdb0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controller/ContactController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/DepartmentContactController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/deleteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/departmentDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/editDepartment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/app.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a7172a3-0767-4cf2-b389-2e2de2dd7129.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a7172a3-0767-4cf2-b389-2e2de2dd7129.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/ContactsDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ContactsDao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/DepartmentsDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/DepartmentsDao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/addDepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/DepartmentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/addDepartment.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/addDepartment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ContactsDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ContactsDao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/DepartmentsDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/DepartmentsDao.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,37 +113,40 @@
     <session id="-420902243">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.1" value="6" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="contacts" value="2" />
-          <entry key="css" value="1" />
-          <entry key="ddl" value="5" />
-          <entry key="departments" value="2" />
+          <entry key="contacts" value="3" />
+          <entry key="css" value="2" />
+          <entry key="ddl" value="11" />
+          <entry key="departments" value="4" />
           <entry key="htaccess" value="2" />
-          <entry key="html" value="2" />
-          <entry key="ini" value="5" />
-          <entry key="js" value="6" />
-          <entry key="php" value="20" />
+          <entry key="html" value="4" />
+          <entry key="ini" value="6" />
+          <entry key="js" value="25" />
+          <entry key="log" value="2" />
+          <entry key="php" value="54" />
           <entry key="sprocket" value="1" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="Database Element" value="5" />
-          <entry key="HTML" value="2" />
-          <entry key="Ini" value="5" />
-          <entry key="JavaScript" value="6" />
-          <entry key="PHP" value="20" />
-          <entry key="SQL" value="5" />
+          <entry key="CSS" value="2" />
+          <entry key="Database Element" value="8" />
+          <entry key="HTML" value="4" />
+          <entry key="Ini" value="6" />
+          <entry key="JavaScript" value="25" />
+          <entry key="PHP" value="54" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="SQL" value="11" />
           <entry key="Scratch" value="1" />
           <entry key="htaccess" value="2" />
         </counts>
@@ -158,20 +155,20 @@
         <counts>
           <entry key="css" value="76" />
           <entry key="dummy" value="1" />
-          <entry key="html" value="16" />
+          <entry key="html" value="211" />
           <entry key="ini" value="13" />
-          <entry key="js" value="598" />
-          <entry key="php" value="170" />
+          <entry key="js" value="2382" />
+          <entry key="php" value="712" />
           <entry key="txt" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="76" />
-          <entry key="HTML" value="16" />
+          <entry key="HTML" value="211" />
           <entry key="Ini" value="13" />
-          <entry key="JavaScript" value="598" />
-          <entry key="PHP" value="170" />
+          <entry key="JavaScript" value="2382" />
+          <entry key="PHP" value="712" />
           <entry key="PLAIN_TEXT" value="50" />
         </counts>
       </usages-collector>
@@ -182,6 +179,11 @@
           <entry key="git.branch.rebase" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.php.new.class">
+        <counts>
+          <entry key="PHP Class.type" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FavoritesManager">
@@ -190,19 +192,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Department.php">
+        <entry file="file://$PROJECT_DIR$/js/departmentDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+            <state relative-caret-position="7533">
+              <caret line="279" selection-start-line="279" selection-end-line="279" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/contacts.ddl">
+        <entry file="file://$PROJECT_DIR$/controller/deleteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="27">
+              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+              <folding>
+                <element signature="e#6#34#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/ContactController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1894">
+              <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/DepartmentContactController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-216">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="4" />
+              <folding>
+                <element signature="e#6#34#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,72 +242,64 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/ContactsDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1728">
-              <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://6a7172a3-0767-4cf2-b389-2e2de2dd7129/schema/sprockets/table/sprocket">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="-455">
+              <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/addDepartmentsController.php">
+        <entry file="file://$PROJECT_DIR$/model/Department.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+            <state relative-caret-position="351">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/app-config.ini">
+        <entry file="file://$PROJECT_DIR$/model/DepartmentsDao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1053">
+              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/DepartmentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/RouterController.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/creds.ini">
+        <entry file="file://$PROJECT_DIR$/js/editDepartment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/addDepartment.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3915">
-              <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="5130">
+              <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -294,20 +318,28 @@
       <list>
         <option value="$PROJECT_DIR$/model/departments.ddl" />
         <option value="$PROJECT_DIR$/model/dept_contacts_db.ddl" />
-        <option value="$PROJECT_DIR$/model/Contact.php" />
         <option value="$PROJECT_DIR$/dao/departmentsDao.php" />
         <option value="$PROJECT_DIR$/model/DB.php" />
         <option value="$PROJECT_DIR$/dao/ContactsDao.php" />
-        <option value="$PROJECT_DIR$/js/common.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/common.css" />
         <option value="$PROJECT_DIR$/controller/addDepartmentController.php" />
         <option value="$PROJECT_DIR$/config/creds.ini" />
-        <option value="$PROJECT_DIR$/model/Department.php" />
         <option value="$PROJECT_DIR$/dao/DepartmentsDao.php" />
-        <option value="$PROJECT_DIR$/js/addDepartment.js" />
-        <option value="$PROJECT_DIR$/model/DepartmentsDao.php" />
         <option value="$PROJECT_DIR$/controller/addDepartmentsController.php" />
+        <option value="$PROJECT_DIR$/../Assignment5/listing.php" />
+        <option value="$PROJECT_DIR$/model/Department.php" />
+        <option value="$PROJECT_DIR$/model/DepartmentsDao.php" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/model/Contact.php" />
+        <option value="$PROJECT_DIR$/js/common.js" />
+        <option value="$PROJECT_DIR$/js/addDepartment.js" />
+        <option value="$PROJECT_DIR$/controller/DepartmentController.php" />
+        <option value="$PROJECT_DIR$/controller/ContactController.php" />
+        <option value="$PROJECT_DIR$/js/departmentDetails.js" />
+        <option value="$PROJECT_DIR$/controller/DepartmentContactController.php" />
+        <option value="$PROJECT_DIR$/js/editDepartment.js" />
+        <option value="$PROJECT_DIR$/controller/deleteController.php" />
+        <option value="$PROJECT_DIR$/model/ContactsDao.php" />
       </list>
     </option>
   </component>
@@ -319,9 +351,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="323" />
+    <option name="x" value="-318" />
     <option name="y" value="5" />
-    <option name="width" value="1599" />
+    <option name="width" value="1353" />
     <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -361,6 +393,11 @@
             <path>
               <item name="web_dev_group_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="web_dev_group_project" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web_dev_group_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web_dev_group_project" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -373,20 +410,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="settings.editor.splitter.proportion" value="0.24297188" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yanju\Desktop\Yanjun_Edgewood\UACS-327\web_dev_group_project\model" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yanju\Desktop\Yanjun_Edgewood\UACS-327\web_dev_group_project\controller" />
-      <recent name="C:\Users\yanju\Desktop\Yanjun_Edgewood\UACS-327\web_dev_group_project\model" />
       <recent name="C:\Users\yanju\Desktop\Yanjun_Edgewood\UACS-327\web_dev_group_project" />
+      <recent name="C:\Users\yanju\Desktop\Yanjun_Edgewood\UACS-327\web_dev_group_project\model" />
       <recent name="C:\Users\yanju\Desktop\Yanjun_Edgewood\UACS-327\web_dev_group_project\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yanju\Desktop\Yanjun_Edgewood\UACS-327\web_dev_group_project\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -416,21 +454,33 @@
       <workItem from="1544007010053" duration="2298000" />
       <workItem from="1544035996518" duration="2794000" />
       <workItem from="1544218820566" duration="1755000" />
-      <workItem from="1544224275186" duration="1775000" />
+      <workItem from="1544224275186" duration="10948000" />
+      <workItem from="1544304478749" duration="1276000" />
+      <workItem from="1544372679039" duration="63000" />
+      <workItem from="1544373598262" duration="30903000" />
+      <workItem from="1544439554467" duration="981000" />
+      <workItem from="1544442987436" duration="2561000" />
     </task>
+    <task id="LOCAL-00001" summary=" 1.edit the index file. add &lt;script&gt;in the &lt;head&gt;. &#10; 2. edit common.css. &#10; 3. edit.common.js &#10; 4. addDepartment.js &#10; 5.addDepartmentsController and the other controllers &#10; 6. edit Department.php &#10; 7.move all the files in &quot;dao&quot; folder into &quot;model&quot;folder&#10; &#10; based on the &quot;version 6&quot;">
+      <created>1544227400110</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544227400110</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24577000" />
+    <option name="totallyTimeSpent" value="69534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9262473" visible="true" weight="0.16151386" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9262473" visible="true" weight="0.23560767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.07375271" side_tool="true" weight="0.26012793" />
-      <window_info active="true" anchor="bottom" id="Messages" sideWeight="0.49946696" visible="true" weight="0.329718" />
-      <window_info anchor="bottom" id="File Transfer" order="0" weight="0.3286334" />
+      <window_info anchor="bottom" id="File Transfer" order="0" sideWeight="0.4996133" visible="true" weight="0.34273317" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="bottom" id="Run" order="3" />
@@ -442,13 +492,38 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4988399" weight="0.33702883" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5003867" side_tool="true" weight="0.33592018" />
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49946696" weight="0.32104123" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49946696" weight="0.19197397" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.2907966" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32782516" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9262473" visible="true" weight="0.09221748" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.07375271" side_tool="true" weight="0.26012793" />
+      <window_info anchor="bottom" id="File Transfer" order="0" sideWeight="0.4996133" weight="0.34314835" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4988399" weight="0.33702883" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5003867" side_tool="true" weight="0.33592018" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49946696" weight="0.32104123" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49946696" weight="0.19197397" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32782516" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -461,34 +536,12 @@
     <option name="LAST_COMMIT_MESSAGE" value=" 1.edit the index file. add &lt;script&gt;in the &lt;head&gt;. &#10; 2. edit common.css. &#10; 3. edit.common.js &#10; 4. addDepartment.js &#10; 5.addDepartmentsController and the other controllers &#10; 6. edit Department.php &#10; 7.move all the files in &quot;dao&quot; folder into &quot;model&quot;folder&#10; &#10; based on the &quot;version 6&quot;" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/dept_contacts_db.ddl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../sample-ws/model/Contact.php" />
     <entry file="file://$PROJECT_DIR$/../sample-ws/model/ContactDao.php" />
     <entry file="file://$PROJECT_DIR$/../sample-ws/model/Db.php" />
     <entry file="file://$PROJECT_DIR$/model/DB" />
     <entry file="file://$PROJECT_DIR$/../sample-ws/model/SprocketDao.php" />
-    <entry file="file://$PROJECT_DIR$/js/AddingContact.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6a7172a3-0767-4cf2-b389-2e2de2dd7129/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Util.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6a7172a3-0767-4cf2-b389-2e2de2dd7129/console.sql" />
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -508,25 +561,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/RouterController.php">
+    <entry file="file://$PROJECT_DIR$/config/app-config.ini">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://6a7172a3-0767-4cf2-b389-2e2de2dd7129/schema/sprockets/table/sprocket" />
+    <entry file="file://$PROJECT_DIR$/../Assignment5/listing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1232" />
+        <state relative-caret-position="2295">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/../Assignment5/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="1431">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Contact.php">
+    <entry file="file://$PROJECT_DIR$/config/creds.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2727">
-          <caret line="106" column="54" selection-start-line="106" selection-start-column="54" selection-end-line="106" selection-end-column="54" />
+        <state relative-caret-position="162">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -544,33 +603,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/DepartmentsDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/departments.ddl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="189">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Department.php">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <state relative-caret-position="324">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/contacts.ddl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="324">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/dept_contacts_db.ddl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/error.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/app.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Util.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/model/Db.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -579,48 +654,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app-config.ini">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/creds.ini">
+    <entry file="file://$PROJECT_DIR$/model/Contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="2970">
+          <caret line="115" column="84" lean-forward="true" selection-start-line="115" selection-start-column="70" selection-end-line="115" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/addDepartment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3915">
-          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+        <state relative-caret-position="4995">
+          <caret line="185" column="20" lean-forward="true" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/AddingContact.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="162">
+          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="das://6a7172a3-0767-4cf2-b389-2e2de2dd7129/schema/sprockets/table/sprocket">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/js/departmentDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7533">
+          <caret line="279" selection-start-line="279" selection-end-line="279" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/editDepartment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5130">
+          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1894">
+          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/deleteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding>
+            <element signature="e#6#34#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/DepartmentContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="4" />
+          <folding>
+            <element signature="e#6#34#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/DepartmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/RouterController.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/model/ContactsDao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        <state relative-caret-position="-455">
+          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/addDepartmentsController.php">
+    <entry file="file://$PROJECT_DIR$/model/DepartmentsDao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        <state relative-caret-position="1053">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Department.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>

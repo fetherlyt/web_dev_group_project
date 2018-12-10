@@ -35,7 +35,7 @@ class ContactsDao
 
     public function delete(int $id)
     {
-        $sql = "delete from contacts where id = ?";
+        $sql = "delete from contacts where `id` =?";
         $params = array($id);
 
         $result = DB::query($sql, $params);
@@ -56,6 +56,32 @@ class ContactsDao
 
         return $result;
     }
+
+    public function get(int $id){
+
+        $sql = "select * from contacts where `id` = ?";
+        $params = array($id);
+        $row = DB::queryOne($sql, $params);
+
+        return $this->create($row);
+    }
+
+    /*Yanjun add: getDeptContact*/
+    public function getDeptContact(int $id)
+    {
+        $sql = "select * from contacts where department =". $id;
+        
+        $rows = DB::queryAll($sql, array());
+        $result = array();
+
+        foreach ($rows as $row) {
+            $contact = $this->create($row);
+            array_push($result, $contact);
+        }
+
+        return $result;
+    }
+
 
     private function create($row)
     {

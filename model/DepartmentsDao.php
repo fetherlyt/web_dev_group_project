@@ -22,7 +22,7 @@ class DepartmentsDao
     public function update(Department $dept)
     {
         $sql = "update departments set dept_number = ?, code = ?, name = ? " .
-            "where id = ?";
+            "where `id` = ?";
         $params = array($dept->getDeptNumber(), $dept->getCode(), $dept->getName(), $dept->getId());
 
         $result = DB::query($sql, $params);
@@ -42,6 +42,15 @@ class DepartmentsDao
         }
 
         return $result;
+    }
+
+    public function get(int $id)
+    {
+        $sql = "select * from departments where `id` = ?";
+        $params = array($id);
+        $row = DB::queryOne($sql, $params);
+
+        return $this->create($row);
     }
 
     private function create($row)

@@ -1,32 +1,69 @@
 /*Create by Yanjun */
 
-function addDepartmentView(event) {
+function handleOneDepartment(event){
     event.preventDefault();
+
+    var target = 3; /*generate id here..*/
+    $.ajax({
+
+        url:"http://localhost/Department".concat("/",target),
+        type:"get",
+        dataType:"json",
+        success: function (response,status) {
+            editDepartmentView(response);
+        },
+        error: function (response,status) {
+            handleError(response);
+        }
+    });
+
+}
+
+function handleError(response) {
+    switch(response.status){
+        case 404:
+            var content = $("#content");
+            content.empty();
+            content.append("Error 404,No Department Data Found");
+            break;
+
+        default:
+            var content = $("#content");
+            content.empty();
+            content.append("Unexpected Error");
+
+    }
+
+}
+
+function editDepartmentView(response) {
+
+    var departmentData = response.data.department;
 
     var content = $('#content');
     content.empty();
 
-    var addHeader = createNode("div",
+    var editHeader = createNode("div",
         [{"name": "id", "value": "subHead"}]);
-    content.append(addHeader);
+    content.append(editHeader);
 
-    var addHeaderTxt = createNode("h3", []);
-    addHeaderTxt.innerHTML = "Department Add";
-    addHeader.append(addHeaderTxt);
+    var editHeaderTxt = createNode("h3", []);
+    editHeaderTxt.innerHTML = "Department Edit: ";
+    editHeaderTxt.append(departmentData.code);
+    editHeader.append(editHeaderTxt);
     var hRuler = createNode("hr", []);
-    addHeader.append(hRuler);
+    editHeader.append(hRuler);
 
-    var addContainer = createNode("div",
+    var editContainer = createNode("div",
         [{"name": "id", "value": "subContent"}]);
-    content.append(addContainer);
+    content.append(editContainer);
 
 
     var table = createNode("table", [{"name":"border","value":"0"}]);
-    addContainer.append(table);
+    editContainer.append(table);
 
     var tbody = createNode("tbody",[]);
     table.append(tbody);
-
 
     //create number input row
     var tr = createNode("tr", []);
@@ -41,10 +78,10 @@ function addDepartmentView(event) {
     tr.append(td);
     var departmentNumberTxt = createNode("input",
         [{"name": "type", "value": "text"},
-            {"name": "id", "value": "departmentNumberId"},
+            {"name": "id", "value": "departmentNumber_Id"},
             {"name": "name", "value": "departmentNumber"},
             {"name": "size", "value": "6"},
-            {"name": "value", "value": ""}]);
+            {"name": "value", "value": departmentData.deptNumber}]);
     td.append(departmentNumberTxt);
 
     var fdRequired = createNode("span",
@@ -66,10 +103,10 @@ function addDepartmentView(event) {
     tr.append(td);
     var codeTxt = createNode("input",
         [{"name": "type", "value": "text"},
-            {"name": "id", "value": "codeId"},
+            {"name": "id", "value": "code_Id"},
             {"name": "name", "value": "code"},
             {"name": "size", "value": "6"},
-            {"name": "value", "value": ""}]);
+            {"name": "value", "value": departmentData.code}]);
     td.append(codeTxt);
 
     //create Name input row
@@ -85,42 +122,50 @@ function addDepartmentView(event) {
     tr.append(td);
     var nameTxt = createNode("input",
         [{"name": "type", "value": "text"},
-            {"name": "id", "value": "nameId"},
+            {"name": "id", "value": "name_Id"},
             {"name": "name", "value": "name"},
             {"name": "size", "value": "24"},
-            {"name": "value", "value": ""}]);
+            {"name": "value", "value": departmentData.name}]);
     td.append(nameTxt);
     var fdRequired1 = createNode("span",
         [{"name": "class", "value": "error"}]);
     fdRequired1.innerHTML = " *";
     td.append(fdRequired1);
 
+    //create Hidden id input row
+    var IdTxt = createNode("input",
+        [{"name": "type", "value": "hidden"},
+            {"name": "id", "value": "id_Id"},
+            {"name": "name", "value": "id"},
+            {"name": "value", "value": departmentData.id}]);
+
     //Create Control Buttons
     tr = createNode("tr", []);
     tbody.append(tr);
 
     td = createNode("td", [{"name": "style", "value": "border:none"}]);
+    td.append(IdTxt);
     tr.append(td);
     td = createNode("td", [{"name": "style", "value": "border:none"},
     ]);
     tr.append(td);
 
-    var submitBtn = createNode("input", [
+    var submit_Btn = createNode("input", [
         {"name": "type", "value": "button"},
-        {"name": "id", "value": "submitId"},
+        {"name": "id", "value": "submitEditId"},
         {"name": "style", "value": "padding:6px"},
         {"name": "value", "value": " Save "}
     ]);
 
-    var cancelBtn = createNode("input", [
+    var cancel_Btn = createNode("input", [
         {"name": "type", "value": "button"},
-        {"name": "id", "value": "cancelId"},
+        {"name": "id", "value": "cancelEditId"},
         {"name": "style", "value": "padding:6px"},
         {"name": "value", "value": "Cancel"}
     ]);
-    td.append(submitBtn);
+    td.append(submit_Btn);
     td.append(" ");
-    td.append(cancelBtn);
+    td.append(cancel_Btn);
 
     //Create *Required
     tr = createNode("tr", []);
@@ -133,22 +178,22 @@ function addDepartmentView(event) {
     td.innerHTML = "* Required";
     tr.append(td);
 
-    submitBtn.addEventListener("click", function (event) {
+    submit_Btn.addEventListener("click", function (event) {
         event.preventDefault();
-        if (validateContactForm())
-            handleSubmitForm();
+        if (validateEditContactForm())
+            handleEditForm();
     });
 
-    cancelBtn.addEventListener("click", function (event) {
+    cancel_Btn.addEventListener("click", function (event) {
         event.preventDefault();
         cancelContactForm();
     });
 
 }
 
-function validateContactForm() {
-    var number = $("#departmentNumberId").val();
-    var name = $("#nameId").val();
+function validateEditContactForm() {
+    var number = $("#departmentNumber_Id").val();
+    var name = $("#name_Id").val();
 
 
     var msg = "";
@@ -173,35 +218,36 @@ function cancelContactForm() {
     document.location = "index.html";
 }
 
-function handleSubmitForm() {
+function handleEditForm() {
     var body = Object();
-    body[$("#departmentNumberId").attr("name")] = $("#departmentNumberId").val();
-    body[$("#codeId").attr("name")] = $("#codeId").val();
-    body[$("#nameId").attr("name")] = $("#nameId").val();
+    body[$("#id_Id").attr("name")] = $("#id_Id").val();
+    body[$("#departmentNumber_Id").attr("name")] = $("#departmentNumber_Id").val();
+    body[$("#code_Id").attr("name")] = $("#code_Id").val();
+    body[$("#name_Id").attr("name")] = $("#name_Id").val();
 
     var myData = JSON.stringify(body);
 
     $.ajax({
         url:"http://localhost/Department",
-        type:"post",
+        type:"put",
         dataType:"json",
         data:myData,
 
         success: function (response,status) {
-            processAddDepartmentResponse(response);
+            processEditDepartmentResponse(response);
         },
 
         error: function (response,status) {
-            handleAddDepartmentError(response);
+            handleEditDepartmentError(response);
         }
     });//ajax
 }
 
-function processAddDepartmentResponse(response) {
+function processEditDepartmentResponse(response) {
     document.location = "index.html";
 
 }
 
-function handleAddDepartmentError(response) {
+function handleEditDepartmentError(response) {
     alert("Failed");
 }
