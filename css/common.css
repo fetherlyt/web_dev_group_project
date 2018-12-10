@@ -41,6 +41,12 @@ button:hover{
     color: white;
     background-color: black;
 }
+
+a.button{
+    text-decoration: none;
+    color:black;
+}
+
 h3{
     color: blue;
     font-size:25px;
