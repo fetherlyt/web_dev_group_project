@@ -247,6 +247,11 @@ function processContactsTable(response) {
 
 
         tr.append(td);
+
+        addButton.addEventListener("click",function (event) {
+           event.preventDefault();
+            handleContactAdd(department.id,department.name);
+        });
     });
 }
 
@@ -545,7 +550,7 @@ function cancelContactForm() {
     document.location = "index.html";
 }
 
-function handleSubmitContactForm() {
+function handleSubmitContactForm(departmentid) {
     var body = Object();
     body[$("#firstName").attr("name")] = $("#firstName").val();
     body[$("#midName").attr("name")] = $("#midName").val();
