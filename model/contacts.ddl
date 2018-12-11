@@ -9,5 +9,6 @@ create table contacts(
   phone varchar(12) not null default "",
   email varchar(64) not null default "",
   title varchar(32) not null default "",
-  CONSTRAINT pk_contact_id PRIMARY KEY (id)
+  CONSTRAINT pk_contact_id PRIMARY KEY (id),
+  FOREIGN KEY (department) REFERENCES departments(ida)
 );

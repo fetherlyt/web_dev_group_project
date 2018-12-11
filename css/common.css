@@ -69,3 +69,8 @@ td.label {
 .deptOptBtn {
     margin-left: 5px;
 }
+
+a.button{
+    text-decoration: none;
+    cloor: black;
+}
