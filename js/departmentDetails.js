@@ -332,7 +332,8 @@ function processContactEdit(response){
         [{"name": "style", "value": "padding: 1em"}]);
     content.append(contactAddContainer);
 
-    var table = createNode("table", []);
+    var table = createNode("table",
+        [{"name":"border","value":"0"}]);
     contactAddContainer.append(table);
     var tbody = createNode("tbody", []);
     contactAddContainer.append(tbody);
@@ -523,7 +524,7 @@ function processContactEdit(response){
 
     saveContactBtn.addEventListener("click", function (event) {
         event.preventDefault();
-        if (validateContactForm())
+        if (validateContacteditForm())
             handleSubmitContactForm(contacts.department);
     });
 
@@ -534,7 +535,7 @@ function processContactEdit(response){
 
 }
 
-function validateContactForm() {
+function validateContacteditForm() {
     var first_name = $("#firstNameTxtId").val();
     var last_name = $("#lastNameTxtId").val();
     var phone = $("#phoneTxtId").val();

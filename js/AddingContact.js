@@ -16,7 +16,8 @@ function handleContactAdd(departmentid, departmentname){
         [{"name":"style","value":"padding: 1em"}]);
     content.append(contactAddContainer);
 
-    var table = createNode("table", []);
+    var table = createNode("table",
+        [{"name":"border","value":"0"}]);
     contactAddContainer.append(table);
     var tbody = createNode("tbody", []);
     contactAddContainer.append(tbody);
@@ -50,7 +51,7 @@ function handleContactAdd(departmentid, departmentname){
     tr.append(td);
     var firstNameTxt = createNode("input",
         [{"name":"type","value":"text"},
-            {"name":"id","value":"firstNameTxtId"},
+            {"name":"id","value":"firstNameTxtIdadd"},
             {"name":"name","value":"firstName"},
             {"name":"value","value":""}]);
     td.append(firstNameTxt);
@@ -71,7 +72,7 @@ function handleContactAdd(departmentid, departmentname){
     tr.append(td);
     var midNameTxt = createNode("input",
         [{"name":"type","value":"text"},
-            {"name":"id","value":"midNameTxtId"},
+            {"name":"id","value":"midNameTxtIdadd"},
             {"name":"name","value":"midName"},
             {"name":"value","value":""}]);
     td.append(midNameTxt);
@@ -88,7 +89,7 @@ function handleContactAdd(departmentid, departmentname){
     tr.append(td);
     var lastNameTxt = createNode("input",
         [{"name":"type","value":"text"},
-            {"name":"id","value":"lastNameTxtId"},
+            {"name":"id","value":"lastNameTxtIdadd"},
             {"name":"name","value":"lastName"},
             {"name":"value","value":""}]);
     td.append(lastNameTxt);
@@ -109,7 +110,7 @@ function handleContactAdd(departmentid, departmentname){
     tr.append(td);
     var primaryCheckbox = createNode("input",
         [{"name":"type","value":"checkbox"},
-            {"name":"id","value":"primaryCheckId"},
+            {"name":"id","value":"primaryCheckIdadd"},
             {"name":"name","value":"primaryCheck"},
         ]);
     td.append(primaryCheckbox);
@@ -126,7 +127,7 @@ function handleContactAdd(departmentid, departmentname){
     tr.append(td);
     var phoneTxt = createNode("input",
         [{"name":"type","value":"text"},
-            {"name":"id","value":"phoneTxtId"},
+            {"name":"id","value":"phoneTxtIdadd"},
             {"name":"name","value":"phone"},
             {"name":"value","value":""}]);
     td.append(phoneTxt);
@@ -147,7 +148,7 @@ function handleContactAdd(departmentid, departmentname){
     tr.append(td);
     var emailTxt = createNode("input",
         [{"name":"type","value":"text"},
-            {"name":"id","value":"emailTxtId"},
+            {"name":"id","value":"emailTxtIdadd"},
             {"name":"name","value":"email"},
             {"name":"value","value":""}]);
     td.append(emailTxt);
@@ -168,7 +169,7 @@ function handleContactAdd(departmentid, departmentname){
     tr.append(td);
     var titleTxt = createNode("input",
         [{"name":"type","value":"text"},
-            {"name":"id","value":"titleTxtId"},
+            {"name":"id","value":"titleTxtIdadd"},
             {"name":"name","value":"title"},
             {"name":"value","value":""}]);
     td.append(titleTxt);
@@ -207,7 +208,7 @@ function handleContactAdd(departmentid, departmentname){
 
     saveContactBtn.addEventListener("click", function (event) {
         event.preventDefault();
-        if (validateContactForm())
+        if (validateContactaddForm())
             handleSubmitForm(departmentid);
     });
 
@@ -218,11 +219,11 @@ function handleContactAdd(departmentid, departmentname){
 
 }
 
-function validateContactForm() {
-    var first_name = $("#firstNameId").val();
-    var last_name = $("#lastNameId").val();
-    var phone = $("#phoneId").val();
-    var email = $("#emailId").val();
+function validateContactaddForm() {
+    var first_name = $("#firstNameTxtIdadd").val();
+    var last_name = $("#lastNameTxtIdadd").val();
+    var phone = $("#phoneTxtIdadd").val();
+    var email = $("#emailTxtIdadd").val();
 
 
     var msg = "";
