@@ -335,11 +335,12 @@ function processContactEdit(response,departmentname){
     var tr = createNode("tr", []);
     tbody.append(tr);
     var td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "Department: ";
     tr.append(td);
 
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var departmentName = createNode("span", []);
     departmentName.innerHTML = departmentDataName;
@@ -348,13 +349,14 @@ function processContactEdit(response,departmentname){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "First Name: ";
     tr.append(td);
 
 
     //adding in the first name row: label and input box *required*
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var firstNameTxt = createNode("input",
         [{"name": "type", "value": "text"},
@@ -371,11 +373,12 @@ function processContactEdit(response,departmentname){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "Middle Initial: ";
     tr.append(td);
 
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var midNameTxt = createNode("input",
         [{"name": "type", "value": "text"},
@@ -388,11 +391,12 @@ function processContactEdit(response,departmentname){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "Last Name: ";
     tr.append(td);
 
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var lastNameTxt = createNode("input",
         [{"name": "type", "value": "text"},
@@ -409,11 +413,12 @@ function processContactEdit(response,departmentname){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "Primary: ";
     tr.append(td);
 
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var primaryCheckbox = createNode("input",
         [{"name": "type", "value": "checkbox"},
@@ -428,11 +433,12 @@ function processContactEdit(response,departmentname){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "Phone: ";
     tr.append(td);
 
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var phoneTxt = createNode("input",
         [{"name": "type", "value": "text"},
@@ -449,11 +455,12 @@ function processContactEdit(response,departmentname){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "Email: ";
     tr.append(td);
 
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var emailTxt = createNode("input",
         [{"name": "type", "value": "text"},
@@ -470,11 +477,12 @@ function processContactEdit(response,departmentname){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name": "class", "value": "label"}]);
+        [{"name": "class", "value": "label"},
+            {"name":"style","value":"border:none"}]);
     td.innerHTML = "Title: ";
     tr.append(td);
 
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
     var titleTxt = createNode("input",
         [{"name": "type", "value": "text"},
@@ -486,7 +494,7 @@ function processContactEdit(response,departmentname){
     //save and cancel buttons
     tr = createNode("tr", []);
     tbody.append(tr);
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
 
     var saveContactBtn = createNode("input", [
@@ -496,7 +504,7 @@ function processContactEdit(response,departmentname){
         {"name": "value", "value": "Save"}
     ]);
     td.append(saveContactBtn);
-    td = createNode("td", []);
+    td = createNode("td", [{"name":"style","value":"border:none"}]);
     tr.append(td);
 
     var cancelContactBtn = createNode("input", [
