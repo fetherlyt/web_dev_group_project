@@ -4,7 +4,7 @@
 function addDepartmentView(event) {
     event.preventDefault();
 
-    var content = $('#content');
+    var content = $("#content");
     content.empty();
 
     var addHeader = createNode("div",
@@ -136,8 +136,8 @@ function addDepartmentView(event) {
 
     submitBtn.addEventListener("click", function (event) {
         event.preventDefault();
-        if (validateContactForm())
-            handleSubmitForm();
+        if (validateDeptContactForm())
+            handleSubmitDeptForm();
     });
 
     cancelBtn.addEventListener("click", function (event) {
@@ -147,7 +147,7 @@ function addDepartmentView(event) {
 
 }
 
-function validateContactForm() {
+function validateDeptContactForm() {
     var number = $("#departmentNumberId").val();
     var name = $("#nameId").val();
 
@@ -174,7 +174,7 @@ function cancelContactForm() {
     document.location = "index.html";
 }
 
-function handleSubmitForm() {
+function handleSubmitDeptForm() {
     var body = Object();
     body[$("#departmentNumberId").attr("name")] = $("#departmentNumberId").val();
     body[$("#codeId").attr("name")] = $("#codeId").val();
