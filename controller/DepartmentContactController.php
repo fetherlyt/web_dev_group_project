@@ -61,7 +61,7 @@ class DepartmentContactController extends AbstractBaseController
             $this->data["statusMsg"] = "Success";
         }
 
-        $this->data["contact"] = $result;
+        $this->data["contacts"] = $result;
     }
 
 

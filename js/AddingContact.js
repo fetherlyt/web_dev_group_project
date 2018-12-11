@@ -258,14 +258,14 @@ function cancelContactForm() {
 
 function handleSubmitForm(departmentid) {
     var body = Object();
-    body[$("#department").attr("name")] = departmentid;
-    body[$("#firstName").attr("name")] = $("#firstName").val();
-    body[$("#midName").attr("name")] = $("#midName").val();
-    body[$("#lastName").attr("name")] = $("#lastName").val();
-    body[$("#primaryCheck").attr("name")] = $("#primaryCheck").val();
-    body[$("#phone").attr("name")] = $("#phone").val();
-    body[$("#email").attr("name")] = $("#email").val();
-    body[$("#title").attr("name")] = $("#title").val();
+    body["department"] = departmentid;
+    body["firstName"] = $("#firstNameTxtIdadd").val();
+    body["middleInitial"] = $("#midNameTxtIdadd").val();
+    body["lastName"] = $("#lastNameTxtIdadd").val();
+    body["primaryContact"] = $("#primaryCheckIdadd").val();
+    body["phone"] = $("#phoneTxtIdadd").val();
+    body["email"] = $("#emailTxtIdadd").val();
+    body["title"] = $("#titleTxtIdadd").val();
 
     var myData = JSON.stringify(body);
 

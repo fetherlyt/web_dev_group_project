@@ -139,12 +139,8 @@ function processContactsTable(response) {
         ]);
     content.append(table);
 
-    //table head
-    var thead = createNode("thead", []);
-    table.append(thead);
-
     var tr = createNode("tr", []);
-    thead.append(tr);
+    table.append(tr);
 
     var th = createNode("th", []);
     th.innerHTML = "Contacts";
@@ -170,10 +166,6 @@ function processContactsTable(response) {
     th.innerHTML = "Options";
     tr.append(th);
 
-    //table body
-    var tbody = createNode("tbody", []);
-    table.append(tbody);
-
     var td;
     var button1;
     var button2;
@@ -186,7 +178,7 @@ function processContactsTable(response) {
     contacts.forEach(function (contact) {
 
         tr = createNode("tr", []);
-        tbody.append(tr);
+        table.append(tr);
 
         td = createNode("td", [{"name": "class", "value": "listing"}]);
         td.innerHTML = contact.firstName + " " + contact.middleInitial + " " + contact.lastName;
@@ -574,14 +566,14 @@ function cancelContactForm() {
 
 function handleSubmitContactForm(departmentid) {
     var body = Object();
-    body[$("#department").attr("name")] = departmentid;
-    body[$("#firstName").attr("name")] = $("#firstName").val();
-    body[$("#midName").attr("name")] = $("#midName").val();
-    body[$("#lastName").attr("name")] = $("#lastName").val();
-    body[$("#primaryCheck").attr("name")] = $("#primaryCheck").val();
-    body[$("#phone").attr("name")] = $("#phone").val();
-    body[$("#email").attr("name")] = $("#email").val();
-    body[$("#title").attr("name")] = $("#title").val();
+    body["department"] = departmentid;
+    body["firstName"] = $("#firstName").val();
+    body["midName"] = $("#midName").val();
+    body["lastName"] = $("#lastName").val();
+    body["primaryCheck"] = $("#primaryCheck").val();
+    body["phone"] = $("#phone").val();
+    body["email"] = $("#email").val();
+    body["title"] = $("#title").val();
 
     var myData = JSON.stringify(body);
 
