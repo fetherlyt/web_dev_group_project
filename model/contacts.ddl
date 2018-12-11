@@ -1,7 +1,7 @@
 use dept_contacts;
 create table contacts(
   id int not null auto_increment,
-  department varchar(32) not null default "",
+  department int not null,
   first_name varchar(32) not null default "",
   middle_initial char not null default "",
   last_name varchar(32) not null default "",
