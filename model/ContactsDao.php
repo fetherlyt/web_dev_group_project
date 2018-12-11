@@ -24,7 +24,7 @@ class ContactsDao
     {
         $sql = "update contacts set department = ?, first_name = ?, middle_initial = ?, last_name = ?, " .
             "primary_contact = ?, phone = ?, email = ?, title = ? " .
-            "where id  ?";
+            "where id  = ?";
         $params = array($contact->getDepartment(), $contact->getFirstName(), $contact->getMiddleInitial(), $contact->getLastName(),
             $contact->isPrimaryContact(), $contact->getPhone(), $contact->getEmail(), $contact->getTitle(), $contact->getId());
 

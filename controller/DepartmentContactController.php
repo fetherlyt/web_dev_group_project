@@ -63,8 +63,4 @@ class DepartmentContactController extends AbstractBaseController
 
         $this->data["contacts"] = $result;
     }
-
-
-
-
 }

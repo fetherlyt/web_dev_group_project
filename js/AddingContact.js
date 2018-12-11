@@ -262,7 +262,7 @@ function handleSubmitForm(departmentid) {
     body["firstName"] = $("#firstNameTxtIdadd").val();
     body["middleInitial"] = $("#midNameTxtIdadd").val();
     body["lastName"] = $("#lastNameTxtIdadd").val();
-    body["primaryContact"] = $("#primaryCheckIdadd").val();
+    body["primaryContact"] = $("#primaryCheckIdadd").prop("checked");
     body["phone"] = $("#phoneTxtIdadd").val();
     body["email"] = $("#emailTxtIdadd").val();
     body["title"] = $("#titleTxtIdadd").val();
