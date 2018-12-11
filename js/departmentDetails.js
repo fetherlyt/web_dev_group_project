@@ -1,10 +1,10 @@
 /*Create by Yanjun */
 
-function handleDepartmentDetails(event){
+function handleDepartmentDetails(event, id){
     event.preventDefault();
 
     $.ajax({
-        url:"http://localhost/Department/1",
+        url:"http://localhost/Department/" + id,
         type:"get",
         dataType:"json",
         success: function (response,status) {

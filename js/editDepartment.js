@@ -1,12 +1,12 @@
 /*Create by Yanjun */
 
-function handleOneDepartment(event){
+function handleOneDepartment(event, id){
     event.preventDefault();
 
     var target = 3; /*generate id here..*/
     $.ajax({
 
-        url:"http://localhost/Department".concat("/",target),
+        url:"http://localhost/Department/" + id,
         type:"get",
         dataType:"json",
         success: function (response,status) {
