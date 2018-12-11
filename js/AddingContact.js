@@ -6,10 +6,10 @@ function handleContactAdd(departmentid, departmentname){
     var contactAddlbl = createNode("div",
         [{"name":"style","value":"border-bottom:1px solid black"}]);
     content.append(contactAddlbl);
-    var contactAddTxt = createNode("span",
-        [{"name":"style","value":"style=color: blue"}]);
+    var contactAddTxt = createNode("h3",
+        [{"name":"style","value":"color: blue"}]);
     contactAddTxt.innerHTML = "Contact Add";
-    contactAddlbl.append(contactAddTxt);
+    content.append(contactAddTxt);
 
 
     var contactAddContainer = createNode("div",

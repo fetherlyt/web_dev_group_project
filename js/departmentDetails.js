@@ -315,8 +315,8 @@ function processContactEdit(response,departmentname){
     var contactAddlbl = createNode("div",
         [{"name": "style", "value": "border-bottom:1px solid black"}]);
     content.append(contactAddlbl);
-    var contactAddTxt = createNode("span",
-        [{"name": "style", "value": "style=color: blue"}]);
+    var contactAddTxt = createNode("h3",
+        [{"name": "style", "value": "color: blue"}]);
     contactAddTxt.innerHTML = "Contact Edit";
     contactAddlbl.append(contactAddTxt);
     var hRuler = createNode("hr", []);
@@ -508,14 +508,11 @@ function processContactEdit(response,departmentname){
     td.append(cancelContactBtn);
 
     //text of "* Required" under buttons
-    tr = createNode("tr", []);
-    tbody.append(tr);
-    td = createNode("td", []);
-    tr.append(td);
+
     var requiredText = createNode("span",
-        [{"name": "style", "value": "error"}]);
+        [{"name": "class", "value": "error"}]);
     requiredText.innerHTML = "* Required";
-    td.append(requiredText);
+    content.append(requiredText);
 
     saveContactBtn.addEventListener("click", function (event) {
         event.preventDefault();
