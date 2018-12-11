@@ -287,6 +287,7 @@ function handleDeleteError(response) {
     alert("Failed");
 }
 
+//will
 function handleEditDetails(lnk) {
 
     $.ajax({
@@ -567,13 +568,13 @@ function cancelContactForm() {
 function handleSubmitContactForm(departmentid) {
     var body = Object();
     body["department"] = departmentid;
-    body["firstName"] = $("#firstName").val();
-    body["midName"] = $("#midName").val();
-    body["lastName"] = $("#lastName").val();
-    body["primaryCheck"] = $("#primaryCheck").val();
-    body["phone"] = $("#phone").val();
-    body["email"] = $("#email").val();
-    body["title"] = $("#title").val();
+    body["firstName"] = $("#firstNameTxtId").val();
+    body["middleInitial"] = $("#midNameTxtId").val();
+    body["lastName"] = $("#lastNameTxtId").val();
+    body["primaryContact"] = $("#primaryCheckId").val();
+    body["phone"] = $("#phoneTxtId").val();
+    body["email"] = $("#emailTxtId").val();
+    body["title"] = $("#titleTxtId").val();
 
     var myData = JSON.stringify(body);
 
