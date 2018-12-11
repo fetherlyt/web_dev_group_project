@@ -10,8 +10,7 @@ function handleContactAdd(departmentid, departmentname){
         [{"name":"style","value":"style=color: blue"}]);
     contactAddTxt.innerHTML = "Contact Add";
     contactAddlbl.append(contactAddTxt);
-    var hRuler = createNode("hr", []);
-    addHeader.append(hRuler);
+
 
     var contactAddContainer = createNode("div",
         [{"name":"style","value":"padding: 1em"}]);
