@@ -98,7 +98,7 @@ function processDepartmentDetailView(response) {
 
     addButton.addEventListener("click", function (event) {
         event.preventDefault();
-        handleContactAdd(departmentData.id, departmentData.name);
+        handleContactAdd(departmentData.id,departmentData.name);
     });
 
     //create div to show contacts information
@@ -225,6 +225,7 @@ function processContactsTable(response) {
         lnk1 = createNode("a",
             [{"name": "id", "value": contact.id},
                 {"name": "href", "value": "Contact/" + contact.id},
+
             ]);
 
         button1.append(lnk1);
@@ -297,7 +298,7 @@ function handleDeleteError(response) {
 function handleEditDetails(lnk) {
 
     $.ajax({
-        url: "http://localhost/DepartmentContact/" + lnk.id,
+        url: "http://localhost/Contact/" + lnk.id,
         type: "get",
         dataType: "json",
         success: function (response, status) {
@@ -310,7 +311,8 @@ function handleEditDetails(lnk) {
 
 }
 
-function processContactEdit(response) {
+function processContactEdit(response){
+
     var contacts = response.data.contact;
 
     var content = $("#content");
@@ -533,10 +535,10 @@ function processContactEdit(response) {
 }
 
 function validateContactForm() {
-    var first_name = $("#firstNameId").val();
-    var last_name = $("#lastNameId").val();
-    var phone = $("#phoneId").val();
-    var email = $("#emailId").val();
+    var first_name = $("#firstNameTxtId").val();
+    var last_name = $("#lastNameTxtId").val();
+    var phone = $("#phoneTxtId").val();
+    var email = $("#emailTxtId").val();
 
 
     var msg = "";
