@@ -96,6 +96,11 @@ function processDepartmentDetailView(response) {
     addButton.innerHTML = "+";
     viewContainer.append(addButton);
 
+    addButton.addEventListener("click",function (event) {
+        event.preventDefault();
+        handleContactAdd(department.id,department.name);
+    });
+
     //create div to show contacts information
     var ContactsContainer = createNode("div",
         [{"name": "id", "value": "contactContent"}]);
@@ -287,7 +292,6 @@ function handleDeleteError(response) {
 
 function handleEditDetails(lnk){
 
-    //this piece??
     var contacts = response.data.contacts;
 
     var content = $("#content");
@@ -498,7 +502,7 @@ function handleEditDetails(lnk){
     saveContactBtn.addEventListener("click", function (event) {
         event.preventDefault();
         if (validateContactForm())
-            handleSubmitContactForm();
+            handleSubmitContactForm(contacts.department);
     });
 
     cancelContactBtn.addEventListener("click", function (event) {
@@ -545,8 +549,9 @@ function cancelContactForm() {
     document.location = "index.html";
 }
 
-function handleSubmitContactForm() {
+function handleSubmitContactForm(departmentid) {
     var body = Object();
+    body[$("#department").attr("name")] = departmentid;
     body[$("#firstName").attr("name")] = $("#firstName").val();
     body[$("#midName").attr("name")] = $("#midName").val();
     body[$("#lastName").attr("name")] = $("#lastName").val();
@@ -578,9 +583,6 @@ function processAddContactResponse(response) {
 
 }
 
-function handleAddDepartmentError(response) {
-    alert("Failed");
-}
 function handleAddContactError(response) {
     alert("Failed");
 }
