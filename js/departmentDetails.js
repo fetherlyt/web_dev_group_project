@@ -528,10 +528,10 @@ function processContactEdit(response){
 }
 
 function validateContactForm() {
-    var first_name = $("#firstNameId").val();
-    var last_name = $("#lastNameId").val();
-    var phone = $("#phoneId").val();
-    var email = $("#emailId").val();
+    var first_name = $("#firstNameTxtId").val();
+    var last_name = $("#lastNameTxtId").val();
+    var phone = $("#phoneTxtId").val();
+    var email = $("#emailTxtId").val();
 
 
     var msg = "";
