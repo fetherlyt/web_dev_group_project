@@ -76,7 +76,8 @@ function handleResponse(response) {
         var detailBtn = createNode("input", [
             {"name": "type", "value": "button"},
             {"name": "style", "value": "padding:6px"},
-            {"name": "value", "value": "Details"}
+            {"name": "value", "value": "Details"},
+            {"name":"class", "value":"deptOptBtn"}
         ]);
 
         detailBtn.addEventListener("click", function (event) {
@@ -87,7 +88,8 @@ function handleResponse(response) {
         var editBtn = createNode("input", [
             {"name": "type", "value": "button"},
             {"name": "style", "value": "padding:6px"},
-            {"name": "value", "value": "Edit"}
+            {"name": "value", "value": "Edit"},
+            {"name":"class", "value":"deptOptBtn"}
         ]);
 
         editBtn.addEventListener("click", function (event) {

@@ -65,3 +65,7 @@ td.label {
 .error {
     color: red;
 }
+
+.deptOptBtn {
+    margin-left: 5px;
+}

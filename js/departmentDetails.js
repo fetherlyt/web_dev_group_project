@@ -1,23 +1,23 @@
 /*Create by Yanjun */
 
-function handleDepartmentDetails(event, id){
+function handleDepartmentDetails(event, id) {
     event.preventDefault();
 
     $.ajax({
-        url:"http://localhost/Department/" + id,
-        type:"get",
-        dataType:"json",
-        success: function (response,status) {
+        url: "http://localhost/Department/" + id,
+        type: "get",
+        dataType: "json",
+        success: function (response, status) {
             processDepartmentDetailView(response);
         },
-        error: function (response,status) {
+        error: function (response, status) {
             handleError(response);
         }
     });
 }
 
 function handleError(response) {
-    switch(response.status){
+    switch (response.status) {
         case 404:
             var content = $("#content");
             content.empty();
@@ -96,9 +96,9 @@ function processDepartmentDetailView(response) {
     addButton.innerHTML = "+";
     viewContainer.append(addButton);
 
-    addButton.addEventListener("click",function (event) {
+    addButton.addEventListener("click", function (event) {
         event.preventDefault();
-        handleContactAdd(department.id,department.name);
+        handleContactAdd(departmentData.id, departmentData.name);
     });
 
     //create div to show contacts information
@@ -114,13 +114,13 @@ function processDepartmentDetailView(response) {
     var deptID = departmentData.id;
 
     $.ajax({
-        url:"http://localhost/DepartmentContact".concat("/",deptID),
-        type:"get",
-        dataType:"json",
-        success: function (response,status) {
+        url: "http://localhost/DepartmentContact".concat("/", deptID),
+        type: "get",
+        dataType: "json",
+        success: function (response, status) {
             processContactsTable(response);
         },
-        error: function (response,status) {
+        error: function (response, status) {
             handleError(response);
 
         }
@@ -132,7 +132,7 @@ function processContactsTable(response) {
     var content = $("#contactContent");
     content.empty();
 
-   //create table
+    //create table
     var table = createNode("table",
         [{"name": "border", "value": "1"},
             {"name": "id", "value": "listingTable"},
@@ -189,13 +189,17 @@ function processContactsTable(response) {
         tbody.append(tr);
 
         td = createNode("td", [{"name": "class", "value": "listing"}]);
-        td.innerHTML = contact.firstName + " "+ contact.middleInitial + " " + contact.lastName;
+        td.innerHTML = contact.firstName + " " + contact.middleInitial + " " + contact.lastName;
 
         tr.append(td);
 
         td = createNode("td", [{"name": "class", "value": "listing"}]);
-        if (contact.primaryContact){td.innerHTML = "Yes";}
-        else {td.innerHTML = "No"; }
+        if (contact.primaryContact) {
+            td.innerHTML = "Yes";
+        }
+        else {
+            td.innerHTML = "No";
+        }
 
         tr.append(td);
 
@@ -215,33 +219,33 @@ function processContactsTable(response) {
         tr.append(td);
 
         td = createNode("td", [{"name": "class", "value": "listing"}]);
-        button1 =createNode("button",[{"name": "style", "value": "padding:3px"}]);
+        button1 = createNode("button", [{"name": "style", "value": "padding:3px"}]);
 
 
         lnk1 = createNode("a",
-            [{"name":"id","value":"c-" + contact.id},
-                {"name":"href","value":"Contact/" + contact.id},
+            [{"name": "id", "value": contact.id},
+                {"name": "href", "value": "Contact/" + contact.id},
             ]);
 
         button1.append(lnk1);
 
         lnk1.innerHTML = "Edit";
-        lnk1.addEventListener("click",function (event) {
+        lnk1.addEventListener("click", function (event) {
             event.preventDefault();
             handleEditDetails(this);
         });
 
 
-        button2 =createNode("button",[{"name": "style", "value": "padding:3px"}]);
+        button2 = createNode("button", [{"name": "style", "value": "padding:3px"}]);
 
 
         lnk2 = createNode("a",
-            [{"name":"id","value":"del-" + contact.id},
-                {"name":"href","value":"delete/" + contact.id},
+            [{"name": "id", "value": "del-" + contact.id},
+                {"name": "href", "value": "delete/" + contact.id},
             ]);
         button2.append(lnk2);
         lnk2.innerHTML = "Delete";
-        lnk2.addEventListener("click",function (event) {
+        lnk2.addEventListener("click", function (event) {
             event.preventDefault();
             handleDelete(this);
         });
@@ -256,29 +260,29 @@ function processContactsTable(response) {
 }
 
 
+function handleDelete(lnk) {
 
-    function  handleDelete(lnk) {
+    var r = confirm("Do you confirm to delete it?");
+    if (r == true) {
 
-        var r = confirm("Do you confirm to delete it?");
-        if (r == true) {
+        var target = $(lnk).attr("href");
+        $.ajax({
+            url: "http://localhost".concat("/", target),
+            type: "get",
+            dataType: "json",
 
-            var target = $(lnk).attr("href");
-            $.ajax({
-                url:"http://localhost".concat("/",target),
-                type:"get",
-                dataType: "json",
+            success: function (response, status) {
+                processDeleteResponse(response);
+            },
+            error: function (response) {
+                handleDeleteError(response);
+            }
+        });
 
-                success:function (response,status) {
-                    processDeleteResponse(response);
-                },
-                error:function (response) {
-                    handleDeleteError(response);
-                }
-            });
-
-        } else{}
-
+    } else {
     }
+
+}
 
 function processDeleteResponse(response) {
     alert("delete!");
@@ -305,24 +309,25 @@ function handleEditDetails(lnk) {
     });
 
 }
-function processContactEdit(response){
-    var contacts = response.data.contacts;
+
+function processContactEdit(response) {
+    var contacts = response.data.contact;
 
     var content = $("#content");
     content.empty();
 
     var contactAddlbl = createNode("div",
-        [{"name":"style","value":"border-bottom:1px solid black"}]);
+        [{"name": "style", "value": "border-bottom:1px solid black"}]);
     content.append(contactAddlbl);
     var contactAddTxt = createNode("span",
-        [{"name":"style","value":"style=color: blue"}]);
+        [{"name": "style", "value": "style=color: blue"}]);
     contactAddTxt.innerHTML = "Contact Edit";
     contactAddlbl.append(contactAddTxt);
     var hRuler = createNode("hr", []);
     content.append(hRuler);
 
     var contactAddContainer = createNode("div",
-        [{"name":"style","value":"padding: 1em"}]);
+        [{"name": "style", "value": "padding: 1em"}]);
     content.append(contactAddContainer);
 
     var table = createNode("table", []);
@@ -333,7 +338,7 @@ function processContactEdit(response){
     var tr = createNode("tr", []);
     tbody.append(tr);
     var td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "Department: ";
     tr.append(td);
 
@@ -346,7 +351,7 @@ function processContactEdit(response){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "First Name: ";
     tr.append(td);
 
@@ -355,13 +360,13 @@ function processContactEdit(response){
     td = createNode("td", []);
     tr.append(td);
     var firstNameTxt = createNode("input",
-        [{"name":"type","value":"text"},
-            {"name":"id","value":"firstNameTxtId"},
-            {"name":"name","value":"firstName"},
-            {"name":"value","value":contacts.first_name}]);
+        [{"name": "type", "value": "text"},
+            {"name": "id", "value": "firstNameTxtId"},
+            {"name": "name", "value": "firstName"},
+            {"name": "value", "value": contacts.first_name}]);
     td.append(firstNameTxt);
     var fdRequired = createNode("span",
-        [{"name":"class","value":"error"}]);
+        [{"name": "class", "value": "error"}]);
     fdRequired.innerHTML = "*";
     td.append(fdRequired);
 
@@ -369,37 +374,37 @@ function processContactEdit(response){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "Middle Initial: ";
     tr.append(td);
 
     td = createNode("td", []);
     tr.append(td);
     var midNameTxt = createNode("input",
-        [{"name":"type","value":"text"},
-            {"name":"id","value":"midNameTxtId"},
-            {"name":"name","value":"midName"},
-            {"name":"value","value":contacts.middle_initial}]);
+        [{"name": "type", "value": "text"},
+            {"name": "id", "value": "midNameTxtId"},
+            {"name": "name", "value": "midName"},
+            {"name": "value", "value": contacts.middle_initial}]);
     td.append(midNameTxt);
 
     //Last name *required*
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "Last Name: ";
     tr.append(td);
 
     td = createNode("td", []);
     tr.append(td);
     var lastNameTxt = createNode("input",
-        [{"name":"type","value":"text"},
-            {"name":"id","value":"lastNameTxtId"},
-            {"name":"name","value":"lastName"},
-            {"name":"value","value":contacts.last_name}]);
+        [{"name": "type", "value": "text"},
+            {"name": "id", "value": "lastNameTxtId"},
+            {"name": "name", "value": "lastName"},
+            {"name": "value", "value": contacts.last_name}]);
     td.append(lastNameTxt);
     fdRequired = createNode("span",
-        [{"name":"class","value":"error"}]);
+        [{"name": "class", "value": "error"}]);
     fdRequired.innerHTML = "*";
     td.append(fdRequired);
 
@@ -407,17 +412,17 @@ function processContactEdit(response){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "Primary: ";
     tr.append(td);
 
     td = createNode("td", []);
     tr.append(td);
     var primaryCheckbox = createNode("input",
-        [{"name":"type","value":"checkbox"},
-            {"name":"id","value":"primaryCheckId"},
-            {"name":"name","value":"primaryCheck"},
-            {"name":"value","value":contacts.primary_contact}
+        [{"name": "type", "value": "checkbox"},
+            {"name": "id", "value": "primaryCheckId"},
+            {"name": "name", "value": "primaryCheck"},
+            {"name": "value", "value": contacts.primary_contact}
         ]);
     td.append(primaryCheckbox);
 
@@ -425,20 +430,20 @@ function processContactEdit(response){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "Phone: ";
     tr.append(td);
 
     td = createNode("td", []);
     tr.append(td);
     var phoneTxt = createNode("input",
-        [{"name":"type","value":"text"},
-            {"name":"id","value":"phoneTxtId"},
-            {"name":"name","value":"phone"},
-            {"name":"value","value":contacts.phone}]);
+        [{"name": "type", "value": "text"},
+            {"name": "id", "value": "phoneTxtId"},
+            {"name": "name", "value": "phone"},
+            {"name": "value", "value": contacts.phone}]);
     td.append(phoneTxt);
     fdRequired = createNode("span",
-        [{"name":"class","value":"error"}]);
+        [{"name": "class", "value": "error"}]);
     fdRequired.innerHTML = "*";
     td.append(fdRequired);
 
@@ -446,20 +451,20 @@ function processContactEdit(response){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "Email: ";
     tr.append(td);
 
     td = createNode("td", []);
     tr.append(td);
     var emailTxt = createNode("input",
-        [{"name":"type","value":"text"},
-            {"name":"id","value":"emailTxtId"},
-            {"name":"name","value":"email"},
-            {"name":"value","value":contacts.email}]);
+        [{"name": "type", "value": "text"},
+            {"name": "id", "value": "emailTxtId"},
+            {"name": "name", "value": "email"},
+            {"name": "value", "value": contacts.email}]);
     td.append(emailTxt);
     fdRequired = createNode("span",
-        [{"name":"class","value":"error"}]);
+        [{"name": "class", "value": "error"}]);
     fdRequired.innerHTML = "*";
     td.append(fdRequired);
 
@@ -467,50 +472,50 @@ function processContactEdit(response){
     tr = createNode("tr", []);
     tbody.append(tr);
     td = createNode("td",
-        [{"name":"class", "value":"label"}]);
+        [{"name": "class", "value": "label"}]);
     td.innerHTML = "Title: ";
     tr.append(td);
 
     td = createNode("td", []);
     tr.append(td);
     var titleTxt = createNode("input",
-        [{"name":"type","value":"text"},
-            {"name":"id","value":"titleTxtId"},
-            {"name":"name","value":"title"},
-            {"name":"value","value":contacts.title}]);
+        [{"name": "type", "value": "text"},
+            {"name": "id", "value": "titleTxtId"},
+            {"name": "name", "value": "title"},
+            {"name": "value", "value": contacts.title}]);
     td.append(titleTxt);
 
     //save and cancel buttons
     tr = createNode("tr", []);
     tbody.append(tr);
-    td = createNode("td",[]);
+    td = createNode("td", []);
     tr.append(td);
 
     var saveContactBtn = createNode("input", [
-        {"name":"type","value":"button"},
-        {"name":"id","value":"saveContactId"},
-        {"name":"style","value":"padding:6px"},
-        {"name":"value","value":"Save"}
+        {"name": "type", "value": "button"},
+        {"name": "id", "value": "saveContactId"},
+        {"name": "style", "value": "padding:6px"},
+        {"name": "value", "value": "Save"}
     ]);
     td.append(saveContactBtn);
-    td = createNode("td",[]);
+    td = createNode("td", []);
     tr.append(td);
 
     var cancelContactBtn = createNode("input", [
-        {"name":"type","value":"button"},
-        {"name":"id","value":"cancelContactId"},
-        {"name":"style","value":"padding:6px"},
-        {"name":"value","value":"Cancel"}
+        {"name": "type", "value": "button"},
+        {"name": "id", "value": "cancelContactId"},
+        {"name": "style", "value": "padding:6px"},
+        {"name": "value", "value": "Cancel"}
     ]);
     td.append(cancelContactBtn);
 
     //text of "* Required" under buttons
     tr = createNode("tr", []);
     tbody.append(tr);
-    td = createNode("td",[]);
+    td = createNode("td", []);
     tr.append(td);
     var requiredText = createNode("span",
-        [{"name":"style","value":"error"}]);
+        [{"name": "style", "value": "error"}]);
     requiredText.innerHTML = "* Required";
     td.append(requiredText);
 
@@ -535,23 +540,23 @@ function validateContactForm() {
 
 
     var msg = "";
-    if (first_name.trim().length == 0){
+    if (first_name.trim().length == 0) {
         msg += "Missing: first name";
     }
 
-    if(last_name.trim().length == 0) {
+    if (last_name.trim().length == 0) {
         msg += "\nMissing: last name";
     }
 
-    if(phone.trim().length == 0) {
+    if (phone.trim().length == 0) {
         msg += "\nMissing: phone";
     }
 
-    if(email.trim().length == 0) {
+    if (email.trim().length == 0) {
         msg += "\nMissing: email";
     }
 
-    if(msg.trim().length != 0) {
+    if (msg.trim().length != 0) {
         alert(msg);
         return false;
     }
@@ -578,16 +583,16 @@ function handleSubmitContactForm(departmentid) {
     var myData = JSON.stringify(body);
 
     $.ajax({
-        url:"http://localhost/Contact",
-        type:"post",
-        dataType:"json",
-        data:myData,
+        url: "http://localhost/Contact",
+        type: "post",
+        dataType: "json",
+        data: myData,
 
-        success: function (response,status) {
+        success: function (response, status) {
             processAddContactResponse(response);
         },
 
-        error: function (response,status) {
+        error: function (response, status) {
             handleAddContactError(response);
         }
     });
