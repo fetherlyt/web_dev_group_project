@@ -359,7 +359,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "text"},
             {"name": "id", "value": "firstNameTxtId"},
             {"name": "name", "value": "firstName"},
-            {"name": "value", "value": contacts.first_name}]);
+            {"name": "value", "value": contacts.firstName}]);
     td.append(firstNameTxt);
     var fdRequired = createNode("span",
         [{"name": "class", "value": "error"}]);
@@ -380,7 +380,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "text"},
             {"name": "id", "value": "midNameTxtId"},
             {"name": "name", "value": "midName"},
-            {"name": "value", "value": contacts.middle_initial}]);
+            {"name": "value", "value": contacts.middleInitial}]);
     td.append(midNameTxt);
 
     //Last name *required*
@@ -397,7 +397,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "text"},
             {"name": "id", "value": "lastNameTxtId"},
             {"name": "name", "value": "lastName"},
-            {"name": "value", "value": contacts.last_name}]);
+            {"name": "value", "value": contacts.lastName}]);
     td.append(lastNameTxt);
     fdRequired = createNode("span",
         [{"name": "class", "value": "error"}]);
@@ -418,7 +418,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "checkbox"},
             {"name": "id", "value": "primaryCheckId"},
             {"name": "name", "value": "primaryCheck"},
-            {"name": "value", "value": contacts.primary_contact}
+            {"name": "value", "value": contacts.primaryContact}
         ]);
     td.append(primaryCheckbox);
 
