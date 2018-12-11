@@ -290,8 +290,22 @@ function handleDeleteError(response) {
     alert("Failed");
 }
 
-function handleEditDetails(lnk){
+function handleEditDetails(lnk) {
 
+    $.ajax({
+        url: "http://localhost/DepartmentContact/" + lnk.id,
+        type: "get",
+        dataType: "json",
+        success: function (response, status) {
+            processContactEdit(response);
+        },
+        error: function (response, status) {
+            handleError(response);
+        }
+    });
+
+}
+function processContactEdit(response){
     var contacts = response.data.contacts;
 
     var content = $("#content");
@@ -344,7 +358,7 @@ function handleEditDetails(lnk){
         [{"name":"type","value":"text"},
             {"name":"id","value":"firstNameTxtId"},
             {"name":"name","value":"firstName"},
-            {"name":"value","value":contacts.first_ame}]);
+            {"name":"value","value":contacts.first_name}]);
     td.append(firstNameTxt);
     var fdRequired = createNode("span",
         [{"name":"class","value":"error"}]);
@@ -403,6 +417,7 @@ function handleEditDetails(lnk){
         [{"name":"type","value":"checkbox"},
             {"name":"id","value":"primaryCheckId"},
             {"name":"name","value":"primaryCheck"},
+            {"name":"value","value":contacts.primary_contact}
         ]);
     td.append(primaryCheckbox);
 
