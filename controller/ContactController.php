@@ -80,6 +80,7 @@ class ContactController extends AbstractBaseController
         }
 
         $json = json_decode($body, true);
+        $department = $json["department"];
         $firstName = $json["firstName"];
         $middleInitial = $json["middleInitial"];
         $lastName = $json["lastName"];
@@ -88,7 +89,7 @@ class ContactController extends AbstractBaseController
         $email = $json["email"];
         $title = $json["title"];
 
-        $contact = new Contact(0, $firstName, $middleInitial, $lastName, $primaryContact, $phone, $email, $title);
+        $contact = new Contact(0,$department, $firstName, $middleInitial, $lastName, $primaryContact, $phone, $email, $title);
 
         $dao = new ContactsDao();
         try {
