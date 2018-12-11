@@ -98,7 +98,7 @@ function processDepartmentDetailView(response) {
 
     addButton.addEventListener("click", function (event) {
         event.preventDefault();
-        handleContactAdd(departmentData.id,departmentData.name);
+        handleContactAdd(departmentData.id, departmentData.name);
     });
 
     //create div to show contacts information
@@ -304,7 +304,7 @@ function handleEditDetails(lnk) {
 
 }
 
-function processContactEdit(response){
+function processContactEdit(response) {
 
     var contacts = response.data.contact;
 
@@ -326,7 +326,7 @@ function processContactEdit(response){
     content.append(contactAddContainer);
 
     var table = createNode("table",
-        [{"name":"border","value":"0"}]);
+        [{"name": "border", "value": "0"}]);
     contactAddContainer.append(table);
     var tbody = createNode("tbody", []);
     contactAddContainer.append(tbody);
@@ -417,9 +417,10 @@ function processContactEdit(response){
     var primaryCheckbox = createNode("input",
         [{"name": "type", "value": "checkbox"},
             {"name": "id", "value": "primaryCheckId"},
-            {"name": "name", "value": "primaryCheck"},
-            {"name": "value", "value": contacts.primaryContact}
+            {"name": "name", "value": "primaryCheck"}
         ]);
+
+    primaryCheckbox.checked = contacts.primaryContact;
     td.append(primaryCheckbox);
 
     //phone *required*
@@ -518,7 +519,7 @@ function processContactEdit(response){
     saveContactBtn.addEventListener("click", function (event) {
         event.preventDefault();
         if (validateContacteditForm())
-            handleSubmitContactForm(contacts.department);
+            handleSubmitContactForm(contacts.id, contacts.department);
     });
 
     cancelContactBtn.addEventListener("click", function (event) {
@@ -565,13 +566,15 @@ function cancelContactForm() {
     document.location = "index.html";
 }
 
-function handleSubmitContactForm(departmentid) {
+function handleSubmitContactForm(id, departmentid) {
     var body = Object();
+
+    body["id"] = id;
     body["department"] = departmentid;
     body["firstName"] = $("#firstNameTxtId").val();
     body["middleInitial"] = $("#midNameTxtId").val();
     body["lastName"] = $("#lastNameTxtId").val();
-    body["primaryContact"] = $("#primaryCheckId").val();
+    body["primaryContact"] = $("#primaryCheckId").prop("checked");
     body["phone"] = $("#phoneTxtId").val();
     body["email"] = $("#emailTxtId").val();
     body["title"] = $("#titleTxtId").val();
@@ -580,7 +583,7 @@ function handleSubmitContactForm(departmentid) {
 
     $.ajax({
         url: "http://localhost/Contact",
-        type: "post",
+        type: "put",
         dataType: "json",
         data: myData,
 
