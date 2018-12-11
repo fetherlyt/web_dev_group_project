@@ -118,7 +118,7 @@ function processDepartmentDetailView(response) {
         type: "get",
         dataType: "json",
         success: function (response, status) {
-            processContactsTable(response);
+            processContactsTable(response,departmentData.name);
         },
         error: function (response, status) {
             handleError(response);
@@ -128,7 +128,7 @@ function processDepartmentDetailView(response) {
     });
 }
 
-function processContactsTable(response) {
+function processContactsTable(response,departmentname) {
     var content = $("#contactContent");
     content.empty();
 
@@ -225,7 +225,7 @@ function processContactsTable(response) {
         lnk1.innerHTML = "Edit";
         lnk1.addEventListener("click", function (event) {
             event.preventDefault();
-            handleEditDetails(this);
+            handleEditDetails(this,departmentname);
         });
 
 
@@ -288,14 +288,14 @@ function handleDeleteError(response) {
 }
 
 //will
-function handleEditDetails(lnk) {
+function handleEditDetails(lnk,departmentname) {
 
     $.ajax({
         url: "http://localhost/Contact/" + lnk.id,
         type: "get",
         dataType: "json",
         success: function (response, status) {
-            processContactEdit(response);
+            processContactEdit(response,departmentname);
         },
         error: function (response, status) {
             handleError(response);
@@ -304,9 +304,10 @@ function handleEditDetails(lnk) {
 
 }
 
-function processContactEdit(response){
+function processContactEdit(response,departmentname){
 
     var contacts = response.data.contact;
+    var departmentDataName = departmentname;
 
     var content = $("#content");
     content.empty();
@@ -341,7 +342,7 @@ function processContactEdit(response){
     td = createNode("td", []);
     tr.append(td);
     var departmentName = createNode("span", []);
-    departmentName.innerHTML = contacts.department;
+    departmentName.innerHTML = departmentDataName;
     td.append(departmentName);
 
     tr = createNode("tr", []);
