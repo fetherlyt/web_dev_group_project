@@ -287,6 +287,7 @@ function handleDeleteError(response) {
     alert("Failed");
 }
 
+//will
 function handleEditDetails(lnk) {
 
     $.ajax({
@@ -358,7 +359,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "text"},
             {"name": "id", "value": "firstNameTxtId"},
             {"name": "name", "value": "firstName"},
-            {"name": "value", "value": contacts.first_name}]);
+            {"name": "value", "value": contacts.firstName}]);
     td.append(firstNameTxt);
     var fdRequired = createNode("span",
         [{"name": "class", "value": "error"}]);
@@ -379,7 +380,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "text"},
             {"name": "id", "value": "midNameTxtId"},
             {"name": "name", "value": "midName"},
-            {"name": "value", "value": contacts.middle_initial}]);
+            {"name": "value", "value": contacts.middleInitial}]);
     td.append(midNameTxt);
 
     //Last name *required*
@@ -396,7 +397,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "text"},
             {"name": "id", "value": "lastNameTxtId"},
             {"name": "name", "value": "lastName"},
-            {"name": "value", "value": contacts.last_name}]);
+            {"name": "value", "value": contacts.lastName}]);
     td.append(lastNameTxt);
     fdRequired = createNode("span",
         [{"name": "class", "value": "error"}]);
@@ -417,7 +418,7 @@ function processContactEdit(response){
         [{"name": "type", "value": "checkbox"},
             {"name": "id", "value": "primaryCheckId"},
             {"name": "name", "value": "primaryCheck"},
-            {"name": "value", "value": contacts.primary_contact}
+            {"name": "value", "value": contacts.primaryContact}
         ]);
     td.append(primaryCheckbox);
 
@@ -567,13 +568,13 @@ function cancelContactForm() {
 function handleSubmitContactForm(departmentid) {
     var body = Object();
     body["department"] = departmentid;
-    body["firstName"] = $("#firstName").val();
-    body["midName"] = $("#midName").val();
-    body["lastName"] = $("#lastName").val();
-    body["primaryCheck"] = $("#primaryCheck").val();
-    body["phone"] = $("#phone").val();
-    body["email"] = $("#email").val();
-    body["title"] = $("#title").val();
+    body["firstName"] = $("#firstNameTxtId").val();
+    body["middleInitial"] = $("#midNameTxtId").val();
+    body["lastName"] = $("#lastNameTxtId").val();
+    body["primaryContact"] = $("#primaryCheckId").val();
+    body["phone"] = $("#phoneTxtId").val();
+    body["email"] = $("#emailTxtId").val();
+    body["title"] = $("#titleTxtId").val();
 
     var myData = JSON.stringify(body);
 
