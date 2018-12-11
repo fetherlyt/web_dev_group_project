@@ -98,7 +98,7 @@ function processDepartmentDetailView(response) {
 
     addButton.addEventListener("click",function (event) {
         event.preventDefault();
-        handleContactAdd(department.id,department.name);
+        handleContactAdd(departmentData.id,departmentData.name);
     });
 
     //create div to show contacts information
@@ -219,7 +219,7 @@ function processContactsTable(response) {
 
 
         lnk1 = createNode("a",
-            [{"name":"id","value":"c-" + contact.id},
+            [{"name":"id","value":contact.id},
                 {"name":"href","value":"Contact/" + contact.id},
             ]);
 
@@ -293,7 +293,7 @@ function handleDeleteError(response) {
 function handleEditDetails(lnk) {
 
     $.ajax({
-        url: "http://localhost/DepartmentContact/" + lnk.id,
+        url: "http://localhost/Contact/" + lnk.id,
         type: "get",
         dataType: "json",
         success: function (response, status) {
@@ -306,7 +306,7 @@ function handleEditDetails(lnk) {
 
 }
 function processContactEdit(response){
-    var contacts = response.data.contacts;
+    var contacts = response.data.contact;
 
     var content = $("#content");
     content.empty();
